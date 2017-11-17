@@ -1,8 +1,18 @@
 var s3 = require('./s3Service')
 var file = require('./fileHandler')
-var expres = require('express')
+var express = require('express')
+const path = require("path");
+const multer = require('multer');
+const express = require('express'); 
+const bodyParser = require('body-parser');
+
 
 var app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true}));
+
+
 
 app.post('/fileUpload',function(req,res){
 
